@@ -1,0 +1,43 @@
+/* -------------------------------------------------------------
+Animation de la page d'accueil
+-----------------------------------------------------------------*/
+
+.animation div{
+    // transform: translateX(1000px);
+    animation : anim-entete 1s 1s both cubic-bezier(0,1.08,1,1.17);
+}
+
+@keyframes anim-entete{
+    0%{transform: translateX(1000px); }
+    100% {
+        transform: translateX(0px); }
+}
+
+.animation div:nth-of-type(1){
+    animation-delay: 1s;
+}
+
+.animation div:nth-of-type(2){
+    animation-delay: 1.5s;
+}
+
+.animation div:nth-of-type(3){
+    animation-delay: 2s;
+}
+
+.animation div:nth-of-type(4){
+    animation-delay: 2.5s;
+}
+
+.animation div:nth-of-type(5){
+    animation-delay: 3s;
+}
+
+$columns: 5;
+
+@for $i from 1 through $columns {
+    .animation div:nth-of-type(#{$i}) {
+        // width: (100% / $i);
+        animation-delay: .5*$i#{s};
+    }
+}
